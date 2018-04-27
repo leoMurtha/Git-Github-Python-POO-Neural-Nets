@@ -24,7 +24,7 @@ TODO: Write history
 
 ## Credits
 
-TODO: Write credits
+Leonardo Meireles Murtha Oliveira
 
 ## License
 
