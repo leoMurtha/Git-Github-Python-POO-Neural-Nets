@@ -1,6 +1,6 @@
-# Project Name
+# Git, Github, Python POO and Neural Nets
 
-TODO: Write a project description
+Small project where i am to develop a simple neural network to run in a bank dataset using python POO and version control with Git.
 
 ## Installation
 
