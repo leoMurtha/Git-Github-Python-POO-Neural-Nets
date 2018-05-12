@@ -1,14 +1,12 @@
 # Git, Github, Python POO and Neural Nets
 
-Small project where i am to develop a simple neural network to run in a bank dataset using python POO and version control with Git.
+Small project where i aim to develop a simple neural network using Stochastic Gradient Descent and sigmoid as activation function, written python POO and versioning control with Git.
 
 ## Installation
-
-TODO: Describe the installation process
+Download and Extract, and run main.py. :)
 
 ## Usage
-
-TODO: Write usage instructions
+Use layer.py to create the network layers and neural_network.py to put them thogether using the add method, after the NN setup just call the train method and predict method.
 
 ## Contributing
 
@@ -18,14 +16,6 @@ TODO: Write usage instructions
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
-## History
-
-TODO: Write history
-
 ## Credits
 
 Leonardo Meireles Murtha Oliveira
-
-## License
-
-TODO: Write license
