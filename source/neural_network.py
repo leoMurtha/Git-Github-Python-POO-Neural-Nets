@@ -30,12 +30,14 @@ class NeuralNetwork(object):
 		gctb = [np.zeros((self.layers[i].biases.shape)) for i in xrange(1, self.len)]
 
 		# Backward pass, delta from last layer
+		# Calculates partial derivative of the cost with respect to the input from layer L
 		delta = mse(self.layers[-1].outputs, output) * sigmoid_derivative(self.layers[-1].z)
 		gctb[-1] = delta
 		gctw[-1] = np.dot(delta, np.transpose(self.layers[-2].outputs))		
 
 		# Putting the back in the backpropagation
 		for l in reversed(xrange(1, self.len - 1)):
+			# Calculates partial derivative of the cost with respect to the input from layer l
 			delta = np.dot((np.transpose(self.layers[l+1].weights) * delta), sigmoid_derivative(self.layers[l].z))
 			gctb[l-1] = delta
 			gctw[l-1] = np.dot(self.layers[l].outputs, delta)			
@@ -44,14 +46,12 @@ class NeuralNetwork(object):
 
 	def gradientdescent(self, gctw, gctb, lr):
 		for l in xrange(1, self.len):
-			#print("{} WEIFHTS {}\n\n".format(l, gctw[l]))
 			self.layers[l].weights = self.layers[l].weights - lr*gctw[l-1]
-			#print("<<{} @@@ {}>>".format(, lr*gctb[l-1]))
 			self.layers[l].biases = self.layers[l].biases - lr*gctb[l-1]
 
 	# Trains the NN
 	# Computes the backpropagation every single input (SLOW)
-	# Next update : batches
+	# Using stochastic gradient descent (Every input we update)
 	def train(self, training_input, training_output, lr=0.1, epochs=10, iterations=100):
 		for i in xrange(epochs):
 			for _input, _output in zip(training_input, training_output):
