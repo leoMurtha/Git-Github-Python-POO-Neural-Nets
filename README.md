@@ -3,7 +3,7 @@
 Small project where i aim to develop a simple neural network using Stochastic Gradient Descent and sigmoid as activation function, written python POO and versioning control with Git.
 
 ## Installation
-Download and Extract, and run main.py. :)
+Download and extract the modules.  ;)
 
 ## Usage
 Use layer.py to create the network layers and neural_network.py to put them thogether using the add method, after the NN setup just call the train method and predict method.
