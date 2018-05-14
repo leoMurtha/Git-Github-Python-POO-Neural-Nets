@@ -18,8 +18,8 @@ def tanh_derivative(x):
 
 
 def mse(y, yT):
-    return np.sum((y - yT)**2)
+    return (y - yT)**2/2
 
 
 def mse_derivative(y, yT):
-    return -2 * (y - yT)
+    return (yT - y)
