@@ -2,7 +2,6 @@ import numpy as np
 from layer import *
 from function import *
 
-
 class NeuralNetwork(object):
 	"""A neural network composed of layers"""
 
@@ -75,9 +74,10 @@ class NeuralNetwork(object):
 				self.feedforward(_input)
 				cost += mse(self.layers[-1].outputs, _output)/len(training_input)
 				gctw, gctb = self.backpropagation(_output)
+				
 				self.gradientdescent(gctw, gctb, lr)
 				
-			#print("Cost for epoch[{}] = {}".format(i, cost))
+			print("Cost for epoch[{}] = {}".format(i, cost))
 
 	# Returns an np.array with the predictions given a test_set
 	def predict(self, test_set):
