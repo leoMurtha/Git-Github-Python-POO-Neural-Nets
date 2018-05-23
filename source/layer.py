@@ -13,6 +13,7 @@ class Layer:
         if(neuron_dim != None):
             self.weights = np.array(np.random.random((num_of_neurons, neuron_dim)) * np.sqrt(2. / neuron_dim))
             self.biases = np.array(np.random.random((1, num_of_neurons)) / 2 * np.random.randn(1 ,num_of_neurons))
+            #self.biases = np.zeros((1, num_of_neurons))
         else:
             self.weights = self.biases = 0
         self.outputs = outputs

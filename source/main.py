@@ -5,7 +5,7 @@ import pandas as pd
 def main():
 
 	# Importing the dataset
-	dataset = pd.read_csv('/home/leo/Documents/Extra/Git-Github-Python-POO-Neural-Nets/Churn_Modelling.csv')
+	"""dataset = pd.read_csv('/home/leo/Documents/Extra/Git-Github-Python-POO-Neural-Nets/Churn_Modelling.csv')
 	X = dataset.iloc[:, 3:13].values
 	y = dataset.iloc[:, 13].values
 
@@ -28,14 +28,17 @@ def main():
 	sc = StandardScaler()
 	X_train = sc.fit_transform(X_train)
 	X_test = sc.transform(X_test)
+	"""
+	X_train = np.array([[1, 1], [0, 1], [1, 0], [1, 0]])
+	y_train = np.array([[0, 0] ,[1, 1], [1, 0]])
 
 	nn = NeuralNetwork()
 
-	nn.add(Layer(6, 11))
-	
-	nn.add(Layer(1, 6))
+	nn.add(Layer(2, 2))
 
-	nn.train(X_train, y_train, 0.1, 30)
+	nn.add(Layer(1, 2))
+	
+	nn.train(X_train, y_train, 0.1, 2)
 	
 	#nn.predict(X_test)
 	
