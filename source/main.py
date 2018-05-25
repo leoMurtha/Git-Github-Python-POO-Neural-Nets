@@ -49,9 +49,7 @@ def main():
 	print(cm)
 	print("Net's Accuracy {:2.2f}%".format((cm[0, 0] + cm[1, 1])/np.sum(cm)*100.0))
 	"""
-	
-	X_test = np.array([[1, 1], [0, 1]])
-	
+		
 	X_train = np.array([[1, 1], [0, 1], [1, 0], [0, 0]])
 	y_train = np.array([[0] ,[1], [1], [0]])
 
@@ -61,20 +59,18 @@ def main():
 
 	nn.add(Layer(1, 2))
 	
-	nn.train(X_train, y_train, 0.05, 10000)
+	nn.train(X_train, y_train, 0.05, 6000)
 	
 	X_test = np.array([[1, 1], [0, 1], [1, 0], [0, 0]])
 	y_test = np.array([[0], [1], [1], [0]])
 	nn.predict(X_test, y_test)
 	y_pred = nn.predict(X_test, y_test)
 
-	y_pred = np.where(y_pred > 0.5, 1.0, 0.0)
-	
+	y_pred = np.round(y_pred)
+	print(y_pred)
+	nn.score(y_test, y_pred)
 	# Making the Confusion Matrix
-	from sklearn.metrics import confusion_matrix
-	cm = confusion_matrix(y_test, y_pred)
-	print(cm)
-	print("Net's Accuracy {:2.2f}%".format((cm[0, 0] + cm[1, 1])/np.sum(cm)*100.0))
+	
 	
 	
 if __name__ == '__main__':
