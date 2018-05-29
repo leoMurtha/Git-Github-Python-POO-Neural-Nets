@@ -30,12 +30,12 @@ def main():
 	y_train = np.array(y_train, dtype = float).reshape((y_train.shape[0],1))
 	y_test = np.array(y_test, dtype = float).reshape((y_test.shape[0], y_train.shape[1]))
 	
+	# Creating the NN architeture
 	nn = NeuralNetwork()
-
 	nn.add(Layer(6, 11))
-
 	nn.add(Layer(1, 6))
 	
+	# Training and validating
 	nn.train(X_train, y_train, 0.01, 100)
 		
 	nn.predict(X_test, y_test)
