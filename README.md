@@ -1,4 +1,4 @@
-# Git, Github, Python POO and Neural Nets
+# Neural Network from Scratch
 
 Small project where i aim to develop a simple neural network using Stochastic Gradient Descent and sigmoid as activation function, written python POO and versioning control with Git.
 
